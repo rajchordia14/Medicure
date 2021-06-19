@@ -1,6 +1,6 @@
 # Medicure
 
-#Start date: 19 June '21
+#Start date: 19 June '21,
 #Time: 8:10 pm
 
 #Contributors:
