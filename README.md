@@ -1,4 +1,4 @@
-# medicure
+# Medicure
 
 Start date: 19 June '21
 
