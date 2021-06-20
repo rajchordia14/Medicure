@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'Screens/home.dart';
 
 void main() {
   runApp(Medicure());
 }
 
 class Medicure extends StatelessWidget {
-  const Medicure({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return MaterialApp(
+      home: HomePage(),
+    );
   }
 }
