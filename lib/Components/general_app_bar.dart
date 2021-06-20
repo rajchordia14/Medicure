@@ -11,11 +11,11 @@ class GeneralAppBar extends StatelessWidget {
         backgroundColor: kBackgroundColor,
         elevation: 0,
         title: Text(
-          'Hello, Alison',
+          'Hello, Alison!',
           style: kAppBarTitleTextStyle,
         ),
         leading: Padding(
-          padding: kAppBarButtonPadding,
+          padding: kAccountButtonPadding,
           child: ElevatedButton(
             onPressed: () {},
             child: Image.asset('images/user.png'),
@@ -29,7 +29,7 @@ class GeneralAppBar extends StatelessWidget {
         ),
         actions: [
           Padding(
-            padding: kAppBarButtonPadding,
+            padding: kSearchButtonPadding,
             child: ElevatedButton(
               onPressed: () {},
               child: Icon(Icons.search, color: Colors.black54),
