@@ -45,7 +45,7 @@ const kIntroTextStyle = TextStyle(
 //<------Constants related to Medicine Card------>
 
 //Paddings
-const kMedCardOutsidePadding = EdgeInsets.only(right: 6.0, top: 15.0);
+const kMedCardOutsidePadding = EdgeInsets.only(right: 6.0, top: 15.0, left: 5.0);
 const kMedCardInsidePadding = EdgeInsets.symmetric(
     horizontal: 24.0, vertical: 24.0
 );
