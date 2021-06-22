@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Screens/home.dart';
+import 'Screens/login.dart';
 import 'constants.dart';
 
 void main() {
@@ -14,7 +15,7 @@ class Medicure extends StatelessWidget {
         primaryColor: kBackgroundColor,
         fontFamily: 'Montserrat',
       ),
-      home: HomePage(),
+      home: LoginPage(),
     );
   }
 }
