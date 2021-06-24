@@ -18,7 +18,15 @@ class HomePage extends StatelessWidget {
         backgroundColor: Color(0xFF66E9E9),
         elevation: 5.0,
         onPressed: (){},
-        child: Icon(Icons.add, size: 40.0,),
+        child: Container(
+          height: double.infinity,
+            width: double.infinity,
+            child: Icon(Icons.add, size: 40.0,),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(56)),
+                gradient: kGradientColor
+            )
+        ),
       ),
       body: ListView(
         children: [
