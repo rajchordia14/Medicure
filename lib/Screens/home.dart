@@ -14,12 +14,15 @@ class HomePage extends StatelessWidget {
         preferredSize: Size.fromHeight(kAppBarHeight),
         child: GeneralAppBar(),
         ),
+
       floatingActionButton: FloatingActionButton(
         backgroundColor: Color(0xFF66E9E9),
         elevation: 5.0,
+        // TODO: Functionality here
         onPressed: (){},
         child: Icon(Icons.add, size: 40.0,),
       ),
+
       body: ListView(
         children: [
           Padding(
@@ -36,6 +39,7 @@ class HomePage extends StatelessWidget {
           MedicineCard(toggle: true)
         ],
       ),
+
       bottomNavigationBar: Theme(
         data: ThemeData(
           backgroundColor: kBackgroundColor,
