@@ -21,15 +21,13 @@ const kAppBarTitleTextStyle = TextStyle(
     fontFamily: 'Montserrat',
     fontWeight: FontWeight.bold,
     color: Colors.black,
-    fontSize: 18.0
-);
+    fontSize: 18.0);
 
 //Borders
 const kAccountBorder = BorderSide(width: 2.5, color: Color(0xFF66E9E9));
 
 //Others
 const kAppBarHeight = 80.0;
-
 
 //<------Home page related Constants------>
 
@@ -38,54 +36,73 @@ const kAppBarHeight = 80.0;
 const kIntroTextPadding = EdgeInsets.only(top: 10.0, left: 24.0);
 
 //TextStyles
-const kIntroTextStyle = TextStyle(
-    fontSize: 18.0,
-    fontWeight: FontWeight.w500
-);
+const kIntroTextStyle = TextStyle(fontSize: 18.0, fontWeight: FontWeight.w500);
+
+
+
+
+
+
+
+//<------Constants related to Login and SignUp------>
+
+//TextStyles
+const kheadingTextStyle =
+TextStyle(color: Colors.black, fontWeight: FontWeight.w600, fontSize: 36.0);
+
+//Padding
+const kNPELeftRightPadding = // Name Email Password
+EdgeInsets.only(left: 36, right: 36);
+
+const kNPELeftPadding =
+EdgeInsets.only(left: 36);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //<------Constants related to Medicine Card------>
 
 //Paddings
+
 const kMedCardOutsidePadding = EdgeInsets.only(right: 3.0, top: 16.0, left: 3.0);
 const kMedCardInsidePadding = EdgeInsets.symmetric(
     horizontal: 24.0, vertical: 24.0
 );
 
+
 //TextStyles
-const kMedNameTextStyle = TextStyle(
-    fontWeight: FontWeight.bold,
-    fontSize: 18.0
-);
-const kMedDescriptionTextStyle = TextStyle(
-    fontSize: 10.0,
-    fontWeight: FontWeight.w200
-);
-const kMedCounterTextStyle = TextStyle(
-    fontWeight: FontWeight.w500,
-    fontSize: 13.0
-);
-const kAlarmTimerTextStyle = TextStyle(
-    fontSize: 24.0,
-    fontWeight: FontWeight.bold
-);
-const kTimerMeridiemTextStyle = TextStyle(
-    fontSize: 12.0,
-    fontWeight: FontWeight.w500
-);
-const kWeekDaysTextStyle = TextStyle(
-    fontSize: 12.0,
-    fontWeight: FontWeight.w500
-);
+const kMedNameTextStyle =
+    TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0);
+const kMedDescriptionTextStyle =
+    TextStyle(fontSize: 10.0, fontWeight: FontWeight.w200);
+const kMedCounterTextStyle =
+    TextStyle(fontWeight: FontWeight.w500, fontSize: 13.0);
+const kAlarmTimerTextStyle =
+    TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold);
+const kTimerMeridiemTextStyle =
+    TextStyle(fontSize: 12.0, fontWeight: FontWeight.w500);
+const kWeekDaysTextStyle =
+    TextStyle(fontSize: 12.0, fontWeight: FontWeight.w500);
 
 //Borders
 const kMedCardBorderRadius = BorderRadius.only(
     topRight: Radius.circular(20.0),
     topLeft: Radius.circular(15.0),
     bottomRight: Radius.circular(20.0),
-    bottomLeft: Radius.circular(15.0)
-);
-
+    bottomLeft: Radius.circular(15.0));
 
 //<------Bottom Navigation Bar------>
 
@@ -94,6 +111,27 @@ const kSelectedItemColor = Colors.black;
 const kUnselectedItemColor = Colors.blueGrey;
 
 //TextStyles
-const kUnselectedTextStyle = TextStyle(
-    color: Colors.blueGrey
+const kUnselectedTextStyle = TextStyle(color: Colors.blueGrey);
+
+
+// For Email and Password
+const kTextFieldDecoration = InputDecoration(
+
+  filled: true,
+  fillColor: Color(0xFF04BFBF),
+  //hintText: 'Enter a value',
+  contentPadding: EdgeInsets.symmetric(vertical: 13.0, horizontal: 16.0),
+  border: OutlineInputBorder(
+    borderRadius: BorderRadius.all(Radius.circular(8.0)),
+  ),
+  enabledBorder: OutlineInputBorder(
+    borderSide: BorderSide(color: Colors.white, width: 1.0),
+    borderRadius: BorderRadius.all(Radius.circular(8.0)),
+
+  ),
+  focusedBorder: OutlineInputBorder(
+    borderSide: BorderSide(color: Colors.white, width: 2.0),
+    borderRadius: BorderRadius.all(Radius.circular(8.0)),
+  ),
 );
+
