@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 //<------General Theme------>
 const kBackgroundColor = Color(0xFFF3FBFE);
+const kGradientColor = LinearGradient(
+    colors: [Color(0xFF04BFBF), Color(0xFF66E9E9)]);
 
 //<------AppBar related constants------>
 
@@ -74,10 +76,12 @@ EdgeInsets.only(left: 36);
 //<------Constants related to Medicine Card------>
 
 //Paddings
-const kMedCardOutsidePadding =
-    EdgeInsets.only(right: 6.0, top: 15.0, left: 5.0);
-const kMedCardInsidePadding =
-    EdgeInsets.symmetric(horizontal: 24.0, vertical: 24.0);
+
+const kMedCardOutsidePadding = EdgeInsets.only(right: 3.0, top: 16.0, left: 3.0);
+const kMedCardInsidePadding = EdgeInsets.symmetric(
+    horizontal: 24.0, vertical: 24.0
+);
+
 
 //TextStyles
 const kMedNameTextStyle =

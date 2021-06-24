@@ -20,7 +20,15 @@ class HomePage extends StatelessWidget {
         elevation: 5.0,
         // TODO: Functionality here
         onPressed: (){},
-        child: Icon(Icons.add, size: 40.0,),
+        child: Container(
+          height: double.infinity,
+            width: double.infinity,
+            child: Icon(Icons.add, size: 40.0,),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(56)),
+                gradient: kGradientColor
+            )
+        ),
       ),
 
       body: ListView(
