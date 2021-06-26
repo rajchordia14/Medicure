@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:medicure/constants.dart';
 import 'package:medicure/Components/welcome_pages_appbar.dart';
-import 'package:cupertino_icons/cupertino_icons.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -11,7 +10,11 @@ class LoginPage extends StatelessWidget {
       extendBodyBehindAppBar: true,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(80),
-        child: WelcomePagesAppBar(),
+        child: WelcomePagesAppBar(
+          imgURL: 'images/google_icon_white.jpg',
+          buttonColor: Color(0xFF092C37),
+          iconColor: Colors.white,
+        ),
       ),
       body: Container(
         height: double.infinity,

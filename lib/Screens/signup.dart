@@ -13,7 +13,11 @@ class SignUpPage extends StatelessWidget {
       extendBodyBehindAppBar: true,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(kAppBarHeight),
-        child: WelcomePagesAppBar(),
+        child: WelcomePagesAppBar(
+          imgURL: 'images/google_icon.png',
+          buttonColor: Colors.white,
+          iconColor: Colors.black,
+        ),
       ),
       body: Container(
         height: double.infinity,

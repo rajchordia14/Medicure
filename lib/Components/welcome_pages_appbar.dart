@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:medicure/constants.dart';
+
 class WelcomePagesAppBar extends StatelessWidget {
+  final String imgURL;
+  final buttonColor;
+  final iconColor;
+  WelcomePagesAppBar({required this.imgURL, this.buttonColor, this.iconColor});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -12,10 +17,11 @@ class WelcomePagesAppBar extends StatelessWidget {
         leading: Padding(
           padding: EdgeInsets.only(left: 2, bottom: 15),
           child: Material(
+            color: buttonColor,
             shape: CircleBorder(),
-            elevation: 5.0,
+            elevation: 10.0,
             child: BackButton(
-              color: Colors.black,
+              color: iconColor,
               onPressed: () {},
             ),
           ),
@@ -33,7 +39,7 @@ class WelcomePagesAppBar extends StatelessWidget {
                   decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       image: DecorationImage(
-                          image: AssetImage('images/google_icon.png'),
+                          image: AssetImage(imgURL),
                           fit: BoxFit.contain))),
             ),
           )
