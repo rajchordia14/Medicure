@@ -117,7 +117,7 @@ class SignUpPage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 38),
+              SizedBox(height: 48),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
