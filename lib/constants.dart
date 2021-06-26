@@ -48,7 +48,13 @@ const kIntroTextStyle = TextStyle(fontSize: 18.0, fontWeight: FontWeight.w500);
 
 //TextStyles
 const kheadingTextStyle =
-TextStyle(color: Colors.black, fontWeight: FontWeight.w600, fontSize: 36.0);
+TextStyle(
+    color: Colors.black,
+    fontWeight: FontWeight.bold,
+    letterSpacing: 1,
+    height: 1,
+    fontSize: 36.0
+);
 
 //Padding
 const kNPELeftRightPadding = // Name Email Password
@@ -118,7 +124,7 @@ const kUnselectedTextStyle = TextStyle(color: Colors.blueGrey);
 const kTextFieldDecoration = InputDecoration(
 
   filled: true,
-  fillColor: Color(0xFF04BFBF),
+  fillColor: Color(0xFF66E9E9),
   //hintText: 'Enter a value',
   contentPadding: EdgeInsets.symmetric(vertical: 13.0, horizontal: 16.0),
   border: OutlineInputBorder(
