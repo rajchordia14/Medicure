@@ -1,33 +1,20 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:medicure/constants.dart';
-import 'package:medicure/Components/general_app_bar.dart';
+import 'package:medicure/Components/welcome_pages_appbar.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        elevation: 0.0,
-        backgroundColor: Colors.transparent,
-        leading: BackButton(
-          color: Colors.white,
-          // TODO: Functionality here
-          onPressed: () {},
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(80),
+        child: WelcomePagesAppBar(
+          imgURL: 'images/google_icon_white.jpg',
+          buttonColor: Color(0xFF092C37),
+          iconColor: Colors.white,
         ),
-        actions: <Widget>[
-          ElevatedButton(
-              onPressed: () {},
-              child: Image.asset('images/google.png'),
-              style: ElevatedButton.styleFrom(
-                primary: Colors.white,
-                shape: CircleBorder(),
-                elevation: 5.0,
-                side: kAccountBorder,
-              )),
-        ],
       ),
       body: Container(
         height: double.infinity,
@@ -37,142 +24,132 @@ class LoginPage extends StatelessWidget {
                 image: AssetImage("images/sign_in_bg.png"),
                 fit: BoxFit.fitWidth,
                 alignment: Alignment.topCenter)),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: EdgeInsets.only(left: 36, top: 120),
-              child: Text(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 36),
+          child: ListView(
+            children: [
+              SizedBox(height: 14),
+              Text(
                 'Welcome\nBack',
                 style: kheadingTextStyle.copyWith(color: Colors.white),
               ),
-            ),
-            SizedBox(
-              height: 134,
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: kNPELeftPadding,
-                  child: Text(
-                    'Email',
+              SizedBox(height: 125),
+              Text(
+                'Email',
+                style: TextStyle(fontWeight: FontWeight.w500),
+              ),
+              SizedBox(
+                height: 4,
+              ),
+              Opacity(
+                opacity: 0.6,
+                child: TextField(
+                  keyboardType: TextInputType.emailAddress,
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                      fontSize: 16,
+                      color: Color(0xFF092C37),
+                      fontWeight: FontWeight.bold),
+                  onChanged: (value) {
+                    //TODO: Functionality.
+                  },
+                  decoration: kTextFieldDecoration.copyWith(
+                    suffixIcon: Icon(
+                      Icons.check_circle,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 28,
+              ),
+              Text(
+                'Password',
+                style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              SizedBox(
+                height: 4,
+              ),
+              Opacity(
+                opacity: 0.6,
+                child: TextField(
+                  keyboardType: TextInputType.visiblePassword,
+                  obscureText: true,
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                      fontSize: 16,
+                      color: Color(0xFF092C37),
+                      fontWeight: FontWeight.bold),
+                  onChanged: (value) {
+                    //TODO: Functionality.
+                  },
+                  decoration: kTextFieldDecoration.copyWith(
+                    suffixIcon: Icon(
+                      Icons.remove_red_eye,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 45,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Sign in',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 24,
+                    ),
+                  ),
+                  Material(
+                    color: Colors.black,
+                    shape: CircleBorder(),
+                    elevation: 5.0,
+                    child: Container(
+                      child: Icon(CupertinoIcons.arrow_right, color: Colors.black,size: 40,),
+                      width: 96,
+                      height: 96,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(56)),
+                          gradient: LinearGradient(
+                              colors: [Color(0xFF092C37).withOpacity(0.4), Color(0xFFF3FBFE).withOpacity(0.4)])
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 40,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Sign up',
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
+                      fontSize: 16,
+                      decoration: TextDecoration.underline,
                     ),
                   ),
-                ),
-                SizedBox(
-                  height: 6,
-                ),
-                Padding(
-                  padding: kNPELeftRightPadding,
-                  child: TextField(
-                    keyboardType: TextInputType.emailAddress,
-                    textAlign: TextAlign.center,
-                    onChanged: (value) {
-                      //TODO: Functionality.
-                    },
-                    decoration: kTextFieldDecoration.copyWith(
-                      suffixIcon: Icon(
-                        Icons.email,
-                      ),
+                  Text(
+                    'Forgot Password',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 16,
+                      decoration: TextDecoration.underline,
                     ),
                   ),
-                ),
-                SizedBox(
-                  height: 32,
-                ),
-                Padding(
-                  padding: kNPELeftPadding,
-                  child: Text(
-                    'Password',
-                    style: TextStyle(),
-                  ),
-                ),
-                SizedBox(
-                  height: 6,
-                ),
-                Padding(
-                  padding: kNPELeftRightPadding,
-                  child: TextField(
-                    keyboardType: TextInputType.emailAddress,
-                    textAlign: TextAlign.center,
-                    onChanged: (value) {
-                      //TODO: Functionality.
-                    },
-                    decoration: kTextFieldDecoration.copyWith(
-                      suffixIcon: Icon(
-                        Icons.remove_red_eye,
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 74,
-                ),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: kNPELeftPadding,
-                      child: Text(
-                        'Sign in',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 24,
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 114,
-                    ),
-                    ElevatedButton(
-                      onPressed: () {},
-                      child: Icon(
-                        Icons.arrow_right_alt_rounded,
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 60,
-                ),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: kNPELeftPadding,
-                      child: Text(
-                        'Sign up',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 16,
-                          decoration: TextDecoration.underline,
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 90,
-                    ),
-                    Padding(
-                      padding: kNPELeftPadding,
-                      child: Text(
-                        'Forgot Password',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 16,
-                          decoration: TextDecoration.underline,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ],
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
