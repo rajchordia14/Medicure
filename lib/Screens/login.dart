@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medicure/constants.dart';
-import 'package:medicure/Components/general_app_bar.dart';
+import 'package:medicure/Components/welcome_pages_appbar.dart';
 
 class LoginPage extends StatelessWidget {
 
@@ -8,25 +8,9 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        elevation: 0.0,
-        backgroundColor: Colors.transparent,
-        leading: BackButton(
-          color: Colors.white,
-          // TODO: Functionality here
-          onPressed: () {},
-        ),
-        actions: <Widget>[
-          ElevatedButton(
-              onPressed: () {},
-              child: Image.asset('images/google.png'),
-              style: ElevatedButton.styleFrom(
-                primary: Colors.white,
-                shape: CircleBorder(),
-                elevation: 5.0,
-                side: kAccountBorder,
-              )),
-        ],
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(80),
+        child: WelcomePagesAppBar(),
       ),
       body: Container(
         height: double.infinity,
