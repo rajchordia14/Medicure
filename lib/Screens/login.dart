@@ -3,7 +3,6 @@ import 'package:medicure/constants.dart';
 import 'package:medicure/Components/general_app_bar.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -36,19 +35,19 @@ class LoginPage extends StatelessWidget {
             image: DecorationImage(
                 image: AssetImage("images/sign_in_bg.png"),
                 fit: BoxFit.fitWidth,
-                alignment: Alignment.topCenter)),
+                alignment: Alignment.topLeft)),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: EdgeInsets.only(left: 36, top: 120),
+              padding: EdgeInsets.only(left: 36, top: 136),
               child: Text(
                 'Welcome\nBack',
                 style: kheadingTextStyle.copyWith(color: Colors.white),
               ),
             ),
             SizedBox(
-              height: 134,
+              height: 156,
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
