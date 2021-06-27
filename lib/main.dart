@@ -3,6 +3,7 @@ import 'Screens/home.dart';
 import 'Screens/login.dart';
 import 'Screens/signup.dart';
 import 'constants.dart';
+import 'Screens/welcome.dart';
 
 void main() {
   runApp(Medicure());
@@ -16,7 +17,7 @@ class Medicure extends StatelessWidget {
         primaryColor: kBackgroundColor,
         fontFamily: 'Montserrat',
       ),
-      home: LoginPage(),
+      home: HomePage(),
     );
   }
 }
