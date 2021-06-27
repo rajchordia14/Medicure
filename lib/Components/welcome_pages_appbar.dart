@@ -1,11 +1,14 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:medicure/constants.dart';
 
 class WelcomePagesAppBar extends StatelessWidget {
-  final String imgURL;
   final buttonColor;
   final iconColor;
-  WelcomePagesAppBar({required this.imgURL, this.buttonColor, this.iconColor});
+  final trailingColor;
+  final trailingGradient;
+
+  WelcomePagesAppBar({this.buttonColor, this.iconColor, this.trailingColor, this.trailingGradient});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -28,19 +31,28 @@ class WelcomePagesAppBar extends StatelessWidget {
         ),
         actions: [
           Padding(
-            padding: EdgeInsets.only(right: 2, bottom: 1),
+            padding: EdgeInsets.only(right: 2, bottom: 2),
             child: Material(
-              color: Colors.transparent,
+              color: trailingColor,
               elevation: 8.0,
               shape: CircleBorder(),
               child: Container(
-                  width: 100,
-                  height: 100,
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      image: DecorationImage(
-                          image: AssetImage(imgURL),
-                          fit: BoxFit.contain))),
+                width: 64,
+                height: 64,
+                decoration: BoxDecoration(
+                  color: trailingColor,
+                  gradient: trailingGradient,
+                  shape: BoxShape.circle
+                ),
+                child: Container(
+                    width: 24,
+                    height: 24,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                            image: AssetImage('images/google_icon.png'),
+                            ))),
+              ),
             ),
           )
         ],
