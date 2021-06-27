@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:medicure/constants.dart';
 import 'package:medicure/Components/welcome_pages_appbar.dart';
+import 'package:medicure/Components/customized_textfield.dart';
 
 class SignUpPage extends StatelessWidget {
-  const SignUpPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +14,12 @@ class SignUpPage extends StatelessWidget {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(kAppBarHeight),
         child: WelcomePagesAppBar(
-          imgURL: 'images/google_icon.png',
           buttonColor: Colors.white,
           iconColor: Colors.black,
+          trailingColor: Color(0xFF092C37),
+          trailingGradient: LinearGradient(
+            colors: [Color(0xFFF3FBFE).withOpacity(0), Color(0xFF092C37)]
+          ),
         ),
       ),
       body: Container(
@@ -29,134 +32,88 @@ class SignUpPage extends StatelessWidget {
                 alignment: Alignment.topCenter)),
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 36),
-          child: ListView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 3),
-              Text(
-                'Create\nAccount',
-                style: kheadingTextStyle,
-              ),
-              SizedBox(height: 30),
-              Text(
-                'Name',
-                style: TextStyle(fontWeight: FontWeight.w500),
-              ),
-              SizedBox(
-                height: 4,
-              ),
-              Opacity(
-                opacity: 0.6,
-                child: TextField(
-                  keyboardType: TextInputType.text,
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                      fontSize: 16,
-                      color: Color(0xFF092C37),
-                      fontWeight: FontWeight.bold),
-                  onChanged: (value) {
-                    //TODO: Functionality.
-                  },
-                  decoration: kTextFieldDecoration
+              SizedBox(height: 100),
+              Expanded(
+                flex: 4,
+                child: Text(
+                  'Create\nAccount',
+                  style: kheadingTextStyle,
                 ),
               ),
-              SizedBox(
-                height: 28,
+              Expanded(
+                flex: 4,
+                child: CustomizedTextField(
+                  title: 'Name'
+                ),
               ),
-              Text(
-                'Email',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                  ),
-              ),
-              SizedBox(
-                height: 4,
-              ),
-              Opacity(
-                opacity: 0.6,
-                child: TextField(
-                  keyboardType: TextInputType.emailAddress,
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                      fontSize: 16,
-                      color: Color(0xFF092C37),
-                      fontWeight: FontWeight.bold),
-                  onChanged: (value) {
-                    //TODO: Functionality.
-                  },
-                  decoration: kTextFieldDecoration.copyWith(
-                    suffixIcon: Icon(
+              Expanded(
+                flex: 4,
+                child: CustomizedTextField(
+                  title: 'Email',
+                  trailingIcon: Icon(
                       Icons.check_circle,
-                      color: Colors.black,
-                    ),
+                      color: Colors.black
                   ),
-                ),
-              ),
-              SizedBox(
-                height: 28,
-              ),
-              Text(
-                'Password',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                  ),
-              ),
-              SizedBox(height: 4),
-              Opacity(
-                opacity: 0.6,
-                child: TextField(
                   keyboardType: TextInputType.emailAddress,
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                      fontSize: 16,
-                      color: Color(0xFF092C37),
-                      fontWeight: FontWeight.bold),
-                  onChanged: (value) {
-                    //TODO: Functionality.
-                  },
-                  decoration: kTextFieldDecoration.copyWith(
-                    suffixIcon: Icon(
-                      Icons.remove_red_eye,
-                      color: Colors.black,
-                    ),
-                  ),
                 ),
               ),
-              SizedBox(height: 48),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Sign up',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 24,
-                      fontWeight: FontWeight.w700
-                    ),
+              Expanded(
+                flex: 4,
+                child: CustomizedTextField(
+                  title: 'Password',
+                  trailingIcon: Icon(
+                      Icons.remove_red_eye,
+                      color: Colors.black
                   ),
-                  Material(
-                    shape: CircleBorder(),
-                    elevation: 5.0,
-                      child: Container(
-                        child: Icon(CupertinoIcons.arrow_right, color: Colors.black,size: 40,),
-                        width: 96,
-                        height: 96,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.all(Radius.circular(56)),
-                              gradient: LinearGradient(
-                                  colors: [Color(0xFFF3FBFE).withOpacity(0.4), Color(0xFF092C37).withOpacity(0.4)])
-                          ),
+                  keyboardType: TextInputType.visiblePassword,
+                ),
+              ),
+              Expanded(
+                flex: 4,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Sign up',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 24,
+                        fontWeight: FontWeight.w700
                       ),
                     ),
-                ],
+                    Material(
+                      color: Color(0xFFF3FBFE),
+                      shape: CircleBorder(),
+                      shadowColor: Color(0xFFF3FBFE).withOpacity(0.2),
+                      elevation: 5.0,
+                        child: Container(
+                          child: Icon(CupertinoIcons.arrow_right, color: Color(0xFF092C37),size: 40,),
+                          width: 96,
+                          height: 96,
+                            decoration: BoxDecoration(
+                              color: Color(0xFFF3FBFE),
+                                borderRadius: BorderRadius.all(Radius.circular(56)),
+                                gradient: LinearGradient(
+                                    colors: [Color(0xFFF3FBFE).withOpacity(0.4), Color(0xFF092C37).withOpacity(0.01)])
+                            ),
+                        ),
+                      ),
+                  ],
+                ),
               ),
-              SizedBox(height: 38),
-              Text(
-                'Sign in',
-                style: TextStyle(
-                  decoration: TextDecoration.underline,
-                  fontSize: 16,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w500
+              Expanded(
+                flex: 3,
+                child: Text(
+                  'Sign in',
+                  style: TextStyle(
+                    decoration: TextDecoration.underline,
+                    fontSize: 16,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w500
+                  ),
                 ),
               )
             ],
