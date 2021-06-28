@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medicure/Screens/account.dart';
 import 'package:medicure/Screens/nearby.dart';
 import 'package:medicure/Screens/set_your_medicine.dart';
 import 'package:medicure/Screens/signup.dart';
@@ -23,7 +24,7 @@ class Medicure extends StatelessWidget {
         fontFamily: 'Montserrat',
       ),
 
-     home: HomePage(),
+     home: Account(),
     );
   }
 }
