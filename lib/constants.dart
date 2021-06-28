@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medicure/constants.dart';
 
 //<------General Theme------>
 const kBackgroundColor = Color(0xFFF3FBFE);
@@ -152,11 +153,12 @@ const kSYMtextStyle =TextStyle(
 
 
 
+//<------Constants related to Account------>
+//const IconData left_arrow =  Icon(CupertinoIcons.right_chevron);
 
-
-
-
-
+// Text Style
+const kAccListText =
+TextStyle(fontSize: 16.0, fontWeight: FontWeight.w500, color: Color(0xFF092C37));
 
 
 
