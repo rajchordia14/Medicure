@@ -8,6 +8,8 @@ import 'Screens/signup.dart';
 import 'package:medicure/Components/draggableScroll.dart';
 import 'Screens/reset_your_medicine.dart';
 import 'constants.dart';
+import 'Screens/welcome.dart';
+
 void main() {
   runApp(Medicure());
 }
@@ -20,7 +22,8 @@ class Medicure extends StatelessWidget {
         primaryColor: kBackgroundColor,
         fontFamily: 'Montserrat',
       ),
-      home: SignUpPage(),
+
+     home: HomePage(),
     );
   }
 }

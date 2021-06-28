@@ -102,7 +102,7 @@ const kMedCardBorderRadius = BorderRadius.only(
 //<------Bottom Navigation Bar------>
 
 //Colors
-const kSelectedItemColor = Colors.black;
+const kSelectedItemColor = Color(0xFF092C37);
 const kUnselectedItemColor = Colors.blueGrey;
 
 //TextStyles
