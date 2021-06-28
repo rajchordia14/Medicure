@@ -68,17 +68,6 @@ EdgeInsets.only(left: 36);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 //<------Constants related to Medicine Card------>
 
 //Paddings
@@ -140,4 +129,41 @@ const kTextFieldDecoration = InputDecoration(
     borderRadius: BorderRadius.all(Radius.circular(8.0)),
   ),
 );
+
+
+
+
+
+//<------Constants related to Set Your Medicine------>
+
+//Color
+const kBorderOutlineColor = Color(0xFF092C37);
+
+//Padding
+const kLeftPadding =
+EdgeInsets.only(left: 36);
+
+//Text
+const kSYMtextStyle =TextStyle(
+    fontWeight: FontWeight.w400,
+    fontSize: 18,
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
