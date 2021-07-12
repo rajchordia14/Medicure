@@ -3,6 +3,8 @@
    <application
         android:label="medicure"
         android:icon="@mipmap/ic_launcher">
+       <meta-data android:name="com.google.android.geo.API_KEY"
+           android:value="AIzaSyCYwwe0xiho7VGbekHTP4cYFhb3WwPuZik"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
