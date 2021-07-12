@@ -23,8 +23,7 @@ class Medicure extends StatelessWidget {
         primaryColor: kBackgroundColor,
         fontFamily: 'Montserrat',
       ),
-
-     home: Account(),
+     home: NearBy(),
     );
   }
 }
