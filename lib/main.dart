@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medicure/Screens/appointment.dart';
 import 'Screens/home.dart';
 import 'Screens/login.dart';
 import 'Screens/signup.dart';
@@ -16,7 +17,7 @@ class Medicure extends StatelessWidget {
         primaryColor: kBackgroundColor,
         fontFamily: 'Montserrat',
       ),
-      home: LoginPage(),
+      home: AppointmentPage(),
     );
   }
 }

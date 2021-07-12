@@ -4,6 +4,7 @@ import 'package:flutter_switch/flutter_switch.dart';
 
 class MedicineCard extends StatelessWidget {
   final bool toggle;
+
   MedicineCard({required this.toggle});
   @override
   Widget build(BuildContext context) {
