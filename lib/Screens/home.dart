@@ -65,7 +65,7 @@ class HomePage extends StatelessWidget {
               label: 'Appointments',
             ),
             BottomNavigationBarItem(
-              icon: Image.asset('images/parental-control.png', height: 25),
+              icon: Icon(Icons.group),
               label: 'Parental',
             ),
             BottomNavigationBarItem(

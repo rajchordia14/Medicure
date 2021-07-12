@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medicure/constants.dart';
 
 //<------General Theme------>
 const kBackgroundColor = Color(0xFFF3FBFE);
@@ -68,17 +69,6 @@ EdgeInsets.only(left: 36);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 //<------Constants related to Medicine Card------>
 
 //Paddings
@@ -113,7 +103,7 @@ const kMedCardBorderRadius = BorderRadius.only(
 //<------Bottom Navigation Bar------>
 
 //Colors
-const kSelectedItemColor = Colors.black;
+const kSelectedItemColor = Color(0xFF092C37);
 const kUnselectedItemColor = Colors.blueGrey;
 
 //TextStyles
@@ -140,4 +130,42 @@ const kTextFieldDecoration = InputDecoration(
     borderRadius: BorderRadius.all(Radius.circular(8.0)),
   ),
 );
+
+
+
+
+
+//<------Constants related to Set Your Medicine------>
+
+//Color
+const kBorderOutlineColor = Color(0xFF092C37);
+
+//Padding
+const kLeftPadding =
+EdgeInsets.only(left: 36);
+
+//Text
+const kSYMtextStyle =TextStyle(
+    fontWeight: FontWeight.w400,
+    fontSize: 18,
+);
+
+
+
+
+//<------Constants related to Account------>
+//const IconData left_arrow =  Icon(CupertinoIcons.right_chevron);
+
+// Text Style
+const kAccListText =
+TextStyle(fontSize: 16.0, fontWeight: FontWeight.w500, color: Color(0xFF092C37));
+
+
+
+
+
+
+
+
+
 
