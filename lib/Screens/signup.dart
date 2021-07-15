@@ -1,13 +1,31 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:medicure/constants.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:medicure/Components/welcome_pages_appbar.dart';
 import 'package:medicure/Components/customized_textfield.dart';
 
-class SignUpPage extends StatelessWidget {
+class SignUpPage extends StatefulWidget {
+  const SignUpPage({Key? key}) : super(key: key);
 
 
   static String id = 'Signup_Screen';
+  @override
+  _SignUpPageState createState() => _SignUpPageState();
+}
+
+class _SignUpPageState extends State<SignUpPage> {
+
+  final _auth = FirebaseAuth.instance;
+  late String email;
+  late String password;
+  late String name;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +38,7 @@ class SignUpPage extends StatelessWidget {
           iconColor: Colors.black,
           trailingColor: Color(0xFF092C37),
           trailingGradient: LinearGradient(
-            colors: [Color(0xFFF3FBFE).withOpacity(0), Color(0xFF092C37)]
+              colors: [Color(0xFFF3FBFE).withOpacity(0), Color(0xFF092C37)]
           ),
         ),
       ),
@@ -48,18 +66,26 @@ class SignUpPage extends StatelessWidget {
               Expanded(
                 flex: 4,
                 child: CustomizedTextField(
-                  title: 'Name'
+                    title: 'Name',
+                    onchange: (value){
+                        name = value;
+                    }
                 ),
               ),
               Expanded(
                 flex: 4,
                 child: CustomizedTextField(
+
                   title: 'Email',
                   trailingIcon: Icon(
                       Icons.check_circle,
                       color: Colors.black
                   ),
                   keyboardType: TextInputType.emailAddress,
+                  onchange: (value){
+                    email = value;
+                  },
+
                 ),
               ),
               Expanded(
@@ -71,6 +97,9 @@ class SignUpPage extends StatelessWidget {
                       color: Colors.black
                   ),
                   keyboardType: TextInputType.visiblePassword,
+                  onchange: (value){
+                    password= value;
+                  },
                 ),
               ),
               Expanded(
@@ -81,9 +110,9 @@ class SignUpPage extends StatelessWidget {
                     Text(
                       'Sign up',
                       style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 24,
-                        fontWeight: FontWeight.w700
+                          color: Colors.white,
+                          fontSize: 24,
+                          fontWeight: FontWeight.w700
                       ),
                     ),
                     Material(
@@ -91,18 +120,32 @@ class SignUpPage extends StatelessWidget {
                       shape: CircleBorder(),
                       shadowColor: Color(0xFFF3FBFE).withOpacity(0.2),
                       elevation: 5.0,
+                      child: GestureDetector(
+                        onTap: ()async{
+                          try{
+                            final newUser = await _auth.createUserWithEmailAndPassword(email: email, password: password);
+                            if(newUser!=null)
+                              {
+                                
+                              }
+                          }
+                          catch(e){
+                            print(e);
+                          }
+                        },
                         child: Container(
                           child: Icon(CupertinoIcons.arrow_right, color: Color(0xFF092C37),size: 40,),
                           width: 96,
                           height: 96,
-                            decoration: BoxDecoration(
+                          decoration: BoxDecoration(
                               color: Color(0xFFF3FBFE),
-                                borderRadius: BorderRadius.all(Radius.circular(56)),
-                                gradient: LinearGradient(
-                                    colors: [Color(0xFFF3FBFE).withOpacity(0.4), Color(0xFF092C37).withOpacity(0.01)])
-                            ),
+                              borderRadius: BorderRadius.all(Radius.circular(56)),
+                              gradient: LinearGradient(
+                                  colors: [Color(0xFFF3FBFE).withOpacity(0.4), Color(0xFF092C37).withOpacity(0.01)])
+                          ),
                         ),
                       ),
+                    ),
                   ],
                 ),
               ),
@@ -111,10 +154,10 @@ class SignUpPage extends StatelessWidget {
                 child: Text(
                   'Sign in',
                   style: TextStyle(
-                    decoration: TextDecoration.underline,
-                    fontSize: 16,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w500
+                      decoration: TextDecoration.underline,
+                      fontSize: 16,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500
                   ),
                 ),
               )
@@ -125,3 +168,4 @@ class SignUpPage extends StatelessWidget {
     );
   }
 }
+
