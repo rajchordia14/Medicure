@@ -23,7 +23,6 @@ class Medicure extends StatelessWidget {
         primaryColor: kBackgroundColor,
         fontFamily: 'Montserrat',
       ),
-
       initialRoute: WelcomePage.id,
       routes: {
         HomePage.id: (context) => HomePage(),
@@ -34,8 +33,6 @@ class Medicure extends StatelessWidget {
         SetYourMedicine.id: (context) => SetYourMedicine(),
         SignUpPage.id: (context) => SignUpPage(), 
       },
-
-     home: SetYourMedicine(),
     );
   }
 }
