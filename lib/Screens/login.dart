@@ -5,6 +5,7 @@ import 'package:medicure/constants.dart';
 import 'package:medicure/Components/welcome_pages_appbar.dart';
 import 'package:medicure/Components/customized_textfield.dart';
 
+
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
@@ -17,6 +18,9 @@ class _LoginPageState extends State<LoginPage> {
   final _auth = FirebaseAuth.instance;
   late String email;
   late String password;
+
+
+class LoginPage extends StatelessWidget {
 
 
 

@@ -8,6 +8,8 @@ import 'package:medicure/Components/customized_textfield.dart';
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
 
+
+  static String id = 'Signup_Screen';
   @override
   _SignUpPageState createState() => _SignUpPageState();
 }
