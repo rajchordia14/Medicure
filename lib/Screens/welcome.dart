@@ -8,6 +8,7 @@ const Color kDark = Color(0xFF092C37), kBrand = Color(0xFF04BFBF);
 class WelcomePage extends StatefulWidget {
   const WelcomePage({Key? key}) : super(key: key);
 
+  static String id = 'Welcome_Screen';
   @override
   _WelcomePageState createState() => _WelcomePageState();
 }

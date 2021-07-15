@@ -6,6 +6,8 @@ import 'package:flutter/cupertino.dart';
 class NearBy extends StatefulWidget {
   const NearBy({Key? key}) : super(key: key);
 
+
+  static String id = 'Nearby_Screen';
   @override
   _NearByState createState() => _NearByState();
 }

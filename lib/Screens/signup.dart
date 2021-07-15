@@ -6,6 +6,8 @@ import 'package:medicure/Components/customized_textfield.dart';
 
 class SignUpPage extends StatelessWidget {
 
+
+  static String id = 'Signup_Screen';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
