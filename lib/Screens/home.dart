@@ -6,6 +6,9 @@ import 'package:medicure/Components/medicine_card.dart';
 
 class HomePage extends StatelessWidget {
 
+
+  static String id = 'Home_Screen';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,7 +81,9 @@ class HomePage extends StatelessWidget {
           unselectedItemColor: kUnselectedItemColor,
           showUnselectedLabels: true,
           unselectedLabelStyle: kUnselectedTextStyle,
-          onTap: (int index){},
+          onTap: (int index){
+
+          },
         ),
       ),
     );

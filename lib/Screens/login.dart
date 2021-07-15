@@ -5,6 +5,10 @@ import 'package:medicure/Components/welcome_pages_appbar.dart';
 import 'package:medicure/Components/customized_textfield.dart';
 
 class LoginPage extends StatelessWidget {
+
+
+  static String id = 'Login_Screen';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
