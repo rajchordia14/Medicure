@@ -6,6 +6,8 @@ import 'package:medicure/Components/draggableScroll.dart';
 class SetYourMedicine extends StatelessWidget {
   const SetYourMedicine({Key? key}) : super(key: key);
 
+
+  static String id = 'SYM_Screen';
   @override
   Widget build(BuildContext context) {
     return SafeArea(

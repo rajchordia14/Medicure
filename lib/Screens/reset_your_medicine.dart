@@ -5,6 +5,9 @@ import 'package:medicure/Components/set_and_reset.dart';
 class ResetYourMedicine extends StatelessWidget {
   const ResetYourMedicine({Key? key}) : super(key: key);
 
+
+  static String id = 'RYM_Screen';
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(

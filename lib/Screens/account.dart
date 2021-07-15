@@ -8,6 +8,9 @@ Icon right_circle = Icon(CupertinoIcons.chevron_right_circle);
 class Account extends StatelessWidget {
   const Account({Key? key}) : super(key: key);
 
+
+  static String id = 'Account_Screen';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
