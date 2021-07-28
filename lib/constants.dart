@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:medicure/constants.dart';
 
+const String kapiKey = "AIzaSyBzlvie1x-amzDMUPEWhIW31YhM0szowfA";
+
+
 //<------General Theme------>
 const kBackgroundColor = Color(0xFFF3FBFE);
 const kGradientColor = LinearGradient(
