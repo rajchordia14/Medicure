@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "953109948635",
-    "project_id": "remedi-dee0e",
-    "storage_bucket": "remedi-dee0e.appspot.com"
+    "project_number": "474336389830",
+    "project_id": "remedi-18c13",
+    "storage_bucket": "remedi-18c13.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:953109948635:android:dfaa2debf6ba5db80d04fe",
+        "mobilesdk_app_id": "1:474336389830:android:6fc4c67fa32784d60d45c7",
         "android_client_info": {
           "package_name": "com.example.medicure"
         }
       },
       "oauth_client": [
         {
-          "client_id": "953109948635-kscacdekkfc8h63mgngnkqv07auv92c5.apps.googleusercontent.com",
+          "client_id": "474336389830-f0ukv7eti6pq61hss5jdfjeg169jakl7.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCVdSmsJ5hauYNWP1XUdNxU8rUNauzUBd4"
+          "current_key": "AIzaSyCmhTsMVxZC70fO3hZTvF8Bz1rZJbm3KP4"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "953109948635-kscacdekkfc8h63mgngnkqv07auv92c5.apps.googleusercontent.com",
+              "client_id": "474336389830-f0ukv7eti6pq61hss5jdfjeg169jakl7.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

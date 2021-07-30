@@ -1,13 +1,25 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:medicure/Functionalities/google_sign_in.dart';
 import 'package:medicure/constants.dart';
+import 'package:provider/provider.dart';
+import 'welcome.dart';
+import 'home.dart';
 import 'package:medicure/Components/welcome_pages_appbar.dart';
 import 'package:medicure/Components/customized_textfield.dart';
-
-class LoginPage extends StatelessWidget {
-
-
+import 'signup.dart';
+class LoginPage extends StatefulWidget {
   static String id = 'Login_Screen';
+  @override
+  _LoginPageState createState() => _LoginPageState();
+}
+class _LoginPageState extends State<LoginPage> {
+
+  final _auth = FirebaseAuth.instance;
+  late String email;
+  late String password;
+  late String name;
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +28,12 @@ class LoginPage extends StatelessWidget {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(80),
         child: WelcomePagesAppBar(
+          onpressed: () async {
+
+            final provider = await Provider.of<GoogleSignInProvider>(context,listen: false);
+            await provider.googleLogin();
+            Navigator.pushNamed(context, HomePage.id);
+          },
           buttonColor: Color(0xFF092C37),
           iconColor: Colors.white,
           trailingColor: Color(0xFFF3FBFE),
@@ -47,10 +65,13 @@ class LoginPage extends StatelessWidget {
               Expanded(
                 flex: 2,
                 child: CustomizedTextField(
+                  onchange: (value){
+                      email = value;
+                  },
                   title: 'Email',
                   trailingIcon: Icon(
-                    Icons.check_circle,
-                    color: Colors.black
+                      Icons.check_circle,
+                      color: Colors.black
                   ),
                   keyboardType: TextInputType.emailAddress,
                 ),
@@ -58,6 +79,9 @@ class LoginPage extends StatelessWidget {
               Expanded(
                 flex: 2,
                 child: CustomizedTextField(
+                  onchange: (value){
+                    password = value;
+                  },
                   title: 'Password',
                   trailingIcon: Icon(
                       Icons.remove_red_eye,
@@ -83,14 +107,27 @@ class LoginPage extends StatelessWidget {
                       shadowColor: Color(0xFF092C37),
                       shape: CircleBorder(),
                       elevation: 5.0,
-                      child: Container(
-                        child: Icon(CupertinoIcons.arrow_right, color: Colors.white,size: 40,),
-                        width: 96,
-                        height: 96,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(56)),
-                            gradient: LinearGradient(
-                                colors: [Color(0xFF092C37).withOpacity(0.4), Color(0xFFF3FBFE).withOpacity(0.4)])
+                      child: GestureDetector(
+                      onTap: ()async{
+                        try{
+                          final user = await _auth.signInWithEmailAndPassword(email: email, password: password);
+                          if(user!=null){
+                              Navigator.pushNamed(context, HomePage.id);
+                          }
+                        }
+                        catch(e){
+                          print(e);
+                        }
+                        },
+                        child: Container(
+                          child: Icon(CupertinoIcons.arrow_right, color: Colors.white,size: 40,),
+                          width: 96,
+                          height: 96,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(Radius.circular(56)),
+                              gradient: LinearGradient(
+                                  colors: [Color(0xFF092C37).withOpacity(0.4), Color(0xFFF3FBFE).withOpacity(0.4)])
+                          ),
                         ),
                       ),
                     ),
@@ -102,13 +139,19 @@ class LoginPage extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      'Sign up',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 16,
-                        decoration: TextDecoration.underline,
+                    GestureDetector(
+                      child: Text(
+                        'Sign up',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 16,
+                          decoration: TextDecoration.underline,
+                        ),
                       ),
+                      onTap: ()
+                      {
+                        Navigator.pushNamed(context, SignUpPage.id);
+                      },
                     ),
                     Text(
                       'Forgot Password',
@@ -128,3 +171,4 @@ class LoginPage extends StatelessWidget {
     );
   }
 }
+
