@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:medicure/constants.dart';
+import 'login.dart';
+import 'signup.dart';
 
 const Color kDark = Color(0xFF092C37), kBrand = Color(0xFF04BFBF);
 
@@ -74,11 +76,17 @@ class _WelcomePageState extends State<WelcomePage> {
                   bgColor: kBrand,
                   text: 'SIGN UP',
                   textColor: kBackgroundColor,
+                  onpressed: (){
+                    Navigator.pushNamed(context, SignUpPage.id);
+                  },
                 ),
                 LSButton(
                   text: 'SIGN IN',
                   bgColor: kBackgroundColor,
                   textColor: kBrand,
+                  onpressed: (){
+                    Navigator.pushNamed(context, LoginPage.id);
+                  },
                 ),
               ],
             ),
@@ -91,9 +99,10 @@ class _WelcomePageState extends State<WelcomePage> {
 
 class LSButton extends StatelessWidget {
   LSButton(
-      {required this.text, required this.bgColor, required this.textColor});
+      {required this.text, required this.bgColor, required this.textColor,required this.onpressed});
   final String text;
   final Color bgColor, textColor;
+  final onpressed;
 
   @override
   Widget build(BuildContext context) {
@@ -117,7 +126,7 @@ class LSButton extends StatelessWidget {
             ],
           ),
           child: TextButton(
-            onPressed: () {},
+            onPressed: onpressed,
             child: Text(
               text,
               style: kheadingTextStyle.copyWith(

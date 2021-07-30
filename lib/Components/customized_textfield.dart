@@ -5,7 +5,8 @@ class CustomizedTextField extends StatelessWidget {
   final title;
   final trailingIcon;
   final keyboardType;
-  Function onchange;
+  final onchange;
+
   CustomizedTextField({this.title, this.trailingIcon, this.keyboardType,required this.onchange});
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,7 @@ class CustomizedTextField extends StatelessWidget {
                 fontSize: 16,
                 color: Color(0xFF092C37),
                 fontWeight: FontWeight.bold),
-            onChanged: (value)=>onchange,
+            onChanged: onchange,
             decoration: kTextFieldDecoration.copyWith(
               suffixIcon: trailingIcon,
             ),

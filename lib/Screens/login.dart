@@ -1,30 +1,25 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:medicure/Functionalities/google_sign_in.dart';
 import 'package:medicure/constants.dart';
+import 'package:provider/provider.dart';
+import 'welcome.dart';
+import 'home.dart';
 import 'package:medicure/Components/welcome_pages_appbar.dart';
 import 'package:medicure/Components/customized_textfield.dart';
-
-
+import 'signup.dart';
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
-
+  static String id = 'Login_Screen';
   @override
   _LoginPageState createState() => _LoginPageState();
 }
-
 class _LoginPageState extends State<LoginPage> {
 
   final _auth = FirebaseAuth.instance;
   late String email;
   late String password;
-
-
-class LoginPage extends StatelessWidget {
-
-
-
-  static String id = 'Login_Screen';
+  late String name;
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +28,12 @@ class LoginPage extends StatelessWidget {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(80),
         child: WelcomePagesAppBar(
+          onpressed: () async {
+
+            final provider = await Provider.of<GoogleSignInProvider>(context,listen: false);
+            await provider.googleLogin();
+            Navigator.pushNamed(context, HomePage.id);
+          },
           buttonColor: Color(0xFF092C37),
           iconColor: Colors.white,
           trailingColor: Color(0xFFF3FBFE),
@@ -111,15 +112,13 @@ class LoginPage extends StatelessWidget {
                         try{
                           final user = await _auth.signInWithEmailAndPassword(email: email, password: password);
                           if(user!=null){
-                            //TODO: route dalna hai
-                            
+                              Navigator.pushNamed(context, HomePage.id);
                           }
                         }
                         catch(e){
                           print(e);
                         }
-
-                          },
+                        },
                         child: Container(
                           child: Icon(CupertinoIcons.arrow_right, color: Colors.white,size: 40,),
                           width: 96,
@@ -140,13 +139,19 @@ class LoginPage extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      'Sign up',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 16,
-                        decoration: TextDecoration.underline,
+                    GestureDetector(
+                      child: Text(
+                        'Sign up',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 16,
+                          decoration: TextDecoration.underline,
+                        ),
                       ),
+                      onTap: ()
+                      {
+                        Navigator.pushNamed(context, SignUpPage.id);
+                      },
                     ),
                     Text(
                       'Forgot Password',
