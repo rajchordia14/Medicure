@@ -37,8 +37,6 @@ class ApplicationBlock with ChangeNotifier {
           selectedLocationStatic.geometry.location.lng,
           placeType);
       markers = [];
-      print("aashitaa");
-      print(places.length);
       for (int i = 0; i < places.length; i++) {
         markers.add(markersService.createMarkerFromPlace(places[i], false));
       }

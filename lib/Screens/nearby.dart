@@ -8,15 +8,6 @@ import 'package:google_place/google_place.dart';
 import 'package:medicure/Blocks/application_block.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-/*
-
-  You -> Green
-  Hospital -> Red
-  Clinic -> Blue
-  Pharmacy -> Yellow
-
- */
-
 class NearBy extends StatefulWidget {
   const NearBy({Key? key}) : super(key: key);
 
