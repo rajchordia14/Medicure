@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:medicure/Components/set_and_reset.dart';
-import 'package:medicure/Screens/home.dart';
 import 'package:medicure/constants.dart';
 
 class DragScreen extends StatelessWidget {

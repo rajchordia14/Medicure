@@ -1,4 +1,3 @@
-import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:medicure/constants.dart';
 import 'package:flutter/cupertino.dart';

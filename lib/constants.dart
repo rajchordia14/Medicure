@@ -5,7 +5,7 @@ import 'package:medicure/constants.dart';
 const kBackgroundColor = Color(0xFFF3FBFE);
 const kGradientColor = LinearGradient(
     colors: [Color(0xFF04BFBF), Color(0xFF66E9E9)]);
-
+const String kapiKey = "AIzaSyBzlvie1x-amzDMUPEWhIW31YhM0szowfA";
 //<------AppBar related constants------>
 
 //Paddings
